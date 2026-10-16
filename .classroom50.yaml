@@ -1,0 +1,12 @@
+schema: "classroom50/repo-config/v1"
+classroom: "fall-2026-comp163"
+assignment: "project-3"
+owner:
+  username: "ascolon-ncat"
+  id: 323285163
+  accepted_at: "2026-10-16T04:10:05Z"
+source:
+  owner: "COMP-163"
+  owner_id: 260731979
+  repo: "fall26-comp163-project3-template"
+  branch: "main"

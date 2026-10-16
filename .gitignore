@@ -1,0 +1,6 @@
+__pycache__/
+concept_check_report.json
+*.pyc
+.DS_Store
+.vscode/
+.idea/
