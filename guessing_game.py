@@ -1,7 +1,6 @@
 # Name: Alicia Colon
 # Date: 16 October 2026
 # Description: Guessing Game
-import random
 
 lowest = 0
 highest = 100
@@ -56,5 +55,5 @@ while running:
         running = False
 
     if guesses == guesses_max and running:
-        print(f"Out of guesses. The number was {secret}.")
+        print(f"Out of guesses. The number was {answer}.")
         running = False
