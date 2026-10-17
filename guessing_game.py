@@ -8,13 +8,22 @@ highest = 100
 guesses = 0
 total = 0
 running = True
-guesses_max = int(input("Enter maximum guesses: ").strip())
-answer = int(input("Enter the secret number: ").strip())
-secret = answer
 
-if lowest >= highest or guesses_max <= 0:
-    print("Invalid setup. Ending game.")
+secret = input("Enter the secret number: ").strip()
+guesses_max = input("Enter maximum guesses: ").strip()
+
+if not secret.isdigit() or not guesses_max.isdigit():
+    print("Invalid input. Ending game.")
     running = False
+
+else:
+    answer = int(secret)
+    guesses_max = int(guesses_max)
+
+    if answer < lowest or answer > highest or guesses_max <= 0:
+        print("Invalid input. Ending game.")
+        running = False
+
 
 while running:
     print(f"Guess {guesses + 1} of {guesses_max}: ")
@@ -23,28 +32,27 @@ while running:
 
     if guess.isdigit():
         guess = int(guess)
-        guesses +=1
-        total += guess
-
     else:
         print("Invalid input. Ending game.")
-        running = False
+        break
 
     if guess < lowest or guess > highest:
         print("Invalid input. Ending game.")
-        running = False
+        break
+
+    guesses += 1
+    total += guess
+
+    print(f"Average guess so far: {total / guesses:.2f}")
 
     if guess < answer:
         print("Too low.")
-        print(f"Average guess so far: {total / guess:.2f}")
         
     elif guess > answer:
         print("Too high.")
-        print(f"Average guess so far: {total / guess:.2f}")
         
     elif guess == answer:
         print(f"You got it! Guesses used: {guesses}")
-        print(f"Average guess so far: {total / guess:.2f}")
         running = False
 
     if guesses == guesses_max and running:
