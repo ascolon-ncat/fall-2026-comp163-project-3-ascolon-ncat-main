@@ -16,19 +16,19 @@ while running:
         guess = int(guess)
         guesses +=1
 
-        if guess < lowest or guess > highest:
-            print("Out of range.")
-            print(f"Please enter a number between {lowest} and {highest}.")
-        elif guess < answer:
+        if guess < answer:
             print("Too low.")
+            print(f"Average guess so far: {guesses / 2:.2f}")
         elif guess > answer:
             print("Too high.")
+            print(f"Average guess so far: {guesses / 2:.2f}")
         else:
             print(f"You got it! Guesses used: {guesses}")
+            print(f"Average guess so far: {guesses / 2:.2f}")
             running = False
     if guesses == 2:
         print(f"Out of guesses. The number was {answer}.")
-
-    else:
-        print("Please enter a valid number.")
-        print(f"Guess a number between {lowest} and {highest}: ")
+        break
+    if guess < lowest or guess > highest:
+        print("Invalid input. Ending game.")
+        break
