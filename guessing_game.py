@@ -4,17 +4,20 @@
 import random
 
 lowest = 0
-highest = 99
+highest = 100
 answer = random.randint(lowest, highest)
 guesses = 0
 running = True
 
 while running:
     guess = input(f"Guess a number between {lowest} and {highest}: ")
-
     if guess.isdigit():
         guess = int(guess)
         guesses +=1
+  
+    if guess < lowest or guess > highest:
+        print("Invalid input. Ending game.")
+        break
 
         if guess < answer:
             print("Too low.")
@@ -28,7 +31,4 @@ while running:
             running = False
     if guesses == 2:
         print(f"Out of guesses. The number was {answer}.")
-        break
-    else:
-        print("Invalid input. Ending game.")
         break
