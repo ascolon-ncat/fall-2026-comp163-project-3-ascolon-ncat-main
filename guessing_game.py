@@ -23,6 +23,8 @@ while running:
 
     if guess < answer:
         print("Too low.")
+        print(f"Average guess so far: {guesses / 2:.2f}")
+        
     elif guess > answer:
         print("Too high.")
         print(f"Average guess so far: {guesses / 2:.2f}")
