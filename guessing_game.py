@@ -16,9 +16,6 @@ if lowest >= highest or guesses_max <= 0:
     print("Invalid setup. Ending game.")
     running = False
 
-if running:
-    answer = random.randint(lowest, highest)
-
 while running:
     print(f"Guess {guesses + 1} of {guesses_max}: ")
     guess = input(f"Guess a number between {lowest} and {highest}: ")
@@ -28,9 +25,10 @@ while running:
         guess = int(guess)
         guesses +=1
         total += guess
+
     else:
         print("Invalid input. Ending game.")
-        break
+        running = False
 
     if guess < lowest or guess > highest:
         print("Invalid input. Ending game.")
