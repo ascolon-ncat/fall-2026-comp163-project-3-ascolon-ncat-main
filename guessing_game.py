@@ -4,7 +4,7 @@
 import random
 
 lowest = 0
-highest = 100
+highest = 99
 answer = random.randint(lowest, highest)
 guesses = 0
 running = True
@@ -29,6 +29,6 @@ while running:
     if guesses == 2:
         print(f"Out of guesses. The number was {answer}.")
         break
-    if guess < lowest or guess > highest:
+    else:
         print("Invalid input. Ending game.")
         break
