@@ -11,11 +11,11 @@ running = True
 guesses_max = 2
 
 while running:
+    print(f"Guess {guesses} of {guesses_max}: ")
     guess = input(f"Guess a number between {lowest} and {highest}: ")
     if guess.isdigit():
         guess = int(guess)
         guesses +=1
-    print(f"Guess {guesses} of {guesses_max}")
 
     if guess < lowest or guess > highest:
         print("Invalid input. Ending game.")
