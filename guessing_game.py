@@ -13,6 +13,8 @@ guesses_max = 2
 while running:
     print(f"Guess {guesses} of {guesses_max}: ")
     guess = input(f"Guess a number between {lowest} and {highest}: ")
+    guess = guess.strip()
+    
     if guess.isdigit():
         guess = int(guess)
         guesses +=1
